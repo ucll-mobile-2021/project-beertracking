@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BeerTracking</string>
+    <string name="about_text">This is app is made by students for students!\n\nDo you always want to try new beers and can\'t remember if you drank them already? Or are you a collector and want to drink them all? Or maybe you do it for some bragging rights?\n\nThere is something for everyone in this app!\n--------------------------------\n\nThe name \'Cervisiam\' comes from latin, translated it literally means beer.</string>
+    <string name="about">About</string>
+    <string name="overview">Overview</string>
+    <string name="cervisiam">Cervisiam</string>
+    <string name="add">Add Beer</string>
+</resources>
