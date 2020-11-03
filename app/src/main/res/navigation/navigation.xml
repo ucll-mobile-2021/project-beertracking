@@ -14,7 +14,11 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.beertracking.view.AddFragment"
-        android:label="AddFragment" />
+        android:label="AddFragment" >
+        <action
+            android:id="@+id/action_addFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.beertracking.view.HomeFragment"

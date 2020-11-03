@@ -14,6 +14,7 @@ class InMemory() {
         beers.add(Beer("Stella Artois", "Best beer in the world"))
         beers.add(Beer("Jupiler", "De walen moeten ook met een bier komen"))
         beers.add(Beer("Duvel", "Sssht hier rust den duvel"))
+        beers.add(Beer("Primus", "Voor de mensen dat slootwater lekker vinden"))
     }
 
     fun addBeer(beer : Beer){

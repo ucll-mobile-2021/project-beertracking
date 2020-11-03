@@ -12,20 +12,14 @@ import com.example.beertracking.model.Beer
 
 class OverviewFragment : Fragment() {
 
-    var db = InMemory()
-
-    val beer = Beer("Primus", "Voor de mensen dat slootwater lekker vinden")
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
         setHasOptionsMenu(true)
 
         val inflatedView = inflater.inflate(R.layout.fragment_overview, container, false)
         val t : TextView = inflatedView.findViewById(R.id.beers);
 
-        db.addBeer(beer)
-
         var text : String = ""
-        for (beer in db.beers){
+        for (beer in MainActivity.GlobalVariable.database.beers){
             text += beer.toString() + "\n\n"
         }
 

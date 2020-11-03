@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.example.beertracking.R
+import com.example.beertracking.database.InMemory
 import com.example.beertracking.databinding.ActivityMainBinding
 import com.example.beertracking.model.Beer
 
@@ -31,5 +32,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, appBarConfiguration)
+    }
+
+    object GlobalVariable {
+        var database = InMemory()
     }
 }
