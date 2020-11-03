@@ -16,6 +16,8 @@ class InMemory() {
         beers.add(Beer("Duvel", "Sssht hier rust den duvel"))
     }
 
-
+    fun addBeer(beer : Beer){
+        beers.add(beer)
+    }
 
 }
