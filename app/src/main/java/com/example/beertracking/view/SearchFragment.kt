@@ -1,46 +1,35 @@
 package com.example.beertracking.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.beertracking.R
-import com.example.beertracking.model.Beer
 
-class AddFragment : Fragment() {
+class SearchFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?{
         setHasOptionsMenu(true)
-        val inflatedView = inflater.inflate(R.layout.fragment_add, container, false)
+        val inflatedView = inflater.inflate(R.layout.fragment_search, container, false)
 
-        //Get the textviews
+        //GET the textviews
         val name : TextView = inflatedView.findViewById(R.id.name_text)
-        val description : TextView = inflatedView.findViewById(R.id.description_text)
 
-        //ADD Beer
-        val b : Button = inflatedView.findViewById(R.id.addbeer_button)
-        b.setOnClickListener {addBeer(it, name, description) }
+        //GET Beer
+        val b : Button = inflatedView.findViewById(R.id.searchbeer_button)
+        b.setOnClickListener {getBeers(it, name) }
 
         return inflatedView
     }
 
-    private fun addBeer(view:View, name:TextView, description:TextView){
-        //Add the beers
-        MainActivity.GlobalVariable.database.addBeer(Beer(name.text.toString(),description.text.toString()))
-
-        //Clear the textviews
+    private fun getBeers(view: View, name: TextView){
+        val beers = MainActivity.GlobalVariable.database.getBeersByName(name.text.toString())
         name.text = ""
-        description.text = ""
-
-        //makes a toast
-        Toast.makeText(activity,"Beer added successfully!", Toast.LENGTH_LONG).show()
-
-        //Redirect
-        view.findNavController().navigate(R.id.action_addFragment_to_overviewFragment)
+        val action = SearchFragmentDirections.actionAddFragmentToSearchedFragment(beers)
+        NavHostFragment.findNavController(this@SearchFragment).navigate(action)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

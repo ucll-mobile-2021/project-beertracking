@@ -1,24 +1,36 @@
 package com.example.beertracking.database
 
-import android.os.Environment
-import android.util.Log
 import com.example.beertracking.model.Beer
-import com.google.gson.Gson
-import java.io.File
+import com.example.beertracking.model.Beers
+import com.example.beertracking.model.CheckIn
+import com.example.beertracking.model.User
+import com.example.beertracking.seed.Seed
 
 class InMemory() {
 
-    val beers = ArrayList<Beer>()
+    var beers = ArrayList<Beer>()
+    var users = ArrayList<User>()
+    var checkIns = ArrayList<CheckIn>()
+    val seed = Seed()
 
     init {
-        beers.add(Beer("Stella Artois", "Best beer in the world"))
-        beers.add(Beer("Jupiler", "De walen moeten ook met een bier komen"))
-        beers.add(Beer("Duvel", "Sssht hier rust den duvel"))
-        beers.add(Beer("Primus", "Voor de mensen dat slootwater lekker vinden"))
+        beers = seed.beers()
+        users = seed.users()
+        checkIns = seed.checkIns()
     }
 
     fun addBeer(beer : Beer){
         beers.add(beer)
+    }
+
+    fun getBeersByName(name: String): Beers {
+        val output = Beers()
+        for (beer in beers){
+            if (beer.name.contains(name, ignoreCase = true)){
+                output.add(beer)
+            }
+        }
+        return output
     }
 
 }
