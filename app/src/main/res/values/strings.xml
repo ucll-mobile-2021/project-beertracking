@@ -5,4 +5,29 @@
     <string name="overview">Overview</string>
     <string name="cervisiam">Cervisiam</string>
     <string name="add">Add Beer</string>
+    <string name="title_activity_create_account">CreateAccountActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="login_title">Login</string>
+    <string name="create_act">Create Account</string>
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="send_password_reset_email">Send password-reset email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Log Out</string>
+    <string name="login">Log In</string>
 </resources>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -42,4 +44,21 @@
             android:name="beer"
             app:argType="com.example.beertracking.model.Beer" />
     </fragment>
+    <activity
+        android:id="@+id/createAccountActivity"
+        android:name="com.example.beertracking.view.CreateAccountActivity"
+        android:label="CreateAccountActivity" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.beertracking.view.LoginActivity"
+        android:label="LoginActivity" />
+    <activity
+        android:id="@+id/forgotPasswordActivity"
+        android:name="com.example.beertracking.view.ForgotPasswordActivity"
+        android:label="ForgotPasswordActivity" />
+    <activity
+        android:id="@+id/userInfoActivity"
+        android:name="com.example.beertracking.view.UserInfoActivity"
+        android:label="activity_user_info"
+        tools:layout="@layout/activity_user_info" />
 </navigation>
