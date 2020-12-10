@@ -25,11 +25,12 @@ class SearchFragment : Fragment() {
         return inflatedView
     }
 
-    private fun getBeers(view: View, name: TextView){
-        val beers = MainActivity.GlobalVariable.database.getBeersByName(name.text.toString())
+    private fun getBeers(view: View, name: TextView) {
+        /*     val beers = MainActivity.GlobalVariable.database.getBeersByName(name.text.toString())
         name.text = ""
         val action = SearchFragmentDirections.actionAddFragmentToSearchedFragment(beers)
         NavHostFragment.findNavController(this@SearchFragment).navigate(action)
+     */
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

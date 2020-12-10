@@ -15,22 +15,26 @@
   ~ limitations under the License.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeFragment"
-        android:title="Home" />
+        android:id="@+id/mainActivity"
+        android:title="Overview"
+        android:icon="@drawable/baseline_home_white_18dp"/>
+
     <item
-        android:id="@+id/addFragment"
-        android:title="@string/add" />
-    <item
-        android:id="@+id/overviewFragment"
-        android:title="@string/overview" />
-    <item
-        android:id="@+id/aboutFragment"
-        android:icon="@drawable/android"
-        android:title="@string/about" />
+        android:id="@+id/addBeerActivity"
+        android:title="Add beer"
+        android:icon="@drawable/baseline_sports_bar_white_18dp"/>
+
     <item
         android:id="@+id/userInfoActivity"
-        android:title="@string/profile" />
+        android:title="@string/profile"
+        android:icon="@drawable/baseline_account_circle_white_18dp" />
 
-</menu>
+    <item
+        android:id="@+id/aboutActivity"
+        android:icon="@drawable/android"
+        android:title="@string/about" />
+    </menu>
+

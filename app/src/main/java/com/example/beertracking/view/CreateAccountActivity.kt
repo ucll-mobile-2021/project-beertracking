@@ -83,8 +83,9 @@ class CreateAccountActivity : AppCompatActivity() {
                         val currentUserDb = mDatabaseReference!!.child(userId)
                         currentUserDb.child("firstName").setValue(firstName)
                         currentUserDb.child("lastName").setValue(lastName)
-                        currentUserDb.child("friends").setValue(ArrayList<String>())
-                        currentUserDb.child("friendrequests").setValue(ArrayList<String>())
+                        var test = ArrayList<String>()
+                        test.add("temp")
+                        currentUserDb.child("friends").setValue(test)
 
                         updateUserInfoAndUI()
                     } else {

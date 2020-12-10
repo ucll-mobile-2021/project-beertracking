@@ -21,10 +21,7 @@
             android:id="@+id/action_addFragment_to_searchedFragment"
             app:destination="@id/searchedFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.beertracking.view.HomeFragment"
-        android:label="HomeFragment" />
+
     <fragment
         android:id="@+id/searchedFragment"
         android:name="com.example.beertracking.view.SearchedFragment"
@@ -61,4 +58,9 @@
         android:name="com.example.beertracking.view.UserInfoActivity"
         android:label="activity_user_info"
         tools:layout="@layout/activity_user_info" />
+    <activity
+        android:id="@+id/addBeerActivity"
+        android:name="com.example.beertracking.view.AddBeerActivity"
+        android:label="activity_add_beer"
+        tools:layout="@layout/activity_add_beer" />
 </navigation>
