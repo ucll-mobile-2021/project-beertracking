@@ -75,7 +75,7 @@ class  AddBeerActivity : BaseAppCompatActivity() {
         }
 
         else {
-/*
+
             selectedImage = findViewById(R.id.displayImageView)
             galleryBtn = findViewById(R.id.galleryBtn)
             uploadBtn = findViewById(R.id.upload)
@@ -103,7 +103,7 @@ class  AddBeerActivity : BaseAppCompatActivity() {
                     startActivityForResult(gallery, GALLERY_REQUEST_CODE)
                     uploadBtn!!.visibility = View.VISIBLE
                 }
-            }) */
+            }) 
             storageReference = FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
             super.onCreate(savedInstanceState)
 
