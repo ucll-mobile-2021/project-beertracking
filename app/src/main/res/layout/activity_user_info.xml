@@ -60,7 +60,7 @@
                     android:textSize="20sp" />
                 <TextView
                     android:id="@+id/tv_email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
             </TableRow>
@@ -77,16 +77,20 @@
                     android:textSize="20sp" />
 
             </TableRow>
-            <TableRow>
+
+            <TableRow android:layout_width="678dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="User ID : "
                     android:textSize="20sp" />
+
                 <TextView
                     android:id="@+id/tv_uid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="1dp"
                     android:textSize="20sp" />
 
             </TableRow>
@@ -97,7 +101,7 @@
             android:layout_below="@+id/tl_data"
             style="@style/viewCustom"
             android:ems="10"
-            android:hint="@string/Friendemail"
+            android:hint="@string/Friendsuid"
             android:inputType="textEmailAddress"
             />
         <Button

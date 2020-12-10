@@ -1,11 +1,7 @@
 package com.example.beertracking.view
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.beertracking.R
@@ -87,7 +83,6 @@ class UserInfoActivity : BaseAppCompatActivity() {
 
                 override fun onCancelled(databaseError: DatabaseError) {}
             })
-            System.out.println(friends2)
             val mUser = mAuth!!.currentUser
 
             friends2.add(mUser!!.uid);
@@ -99,24 +94,18 @@ class UserInfoActivity : BaseAppCompatActivity() {
 
             mUserReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                        friends = snapshot.child("friends").value as ArrayList<String>
-                        System.out.println("friends-------------------")
-                        System.out.println(friends)
-                        if (friends[0] == "temp"){
-                            friends.removeAt(0);
-                        }
-                    System.out.println("friends again-------------------")
-                    System.out.println(friends)
+                    friends = snapshot.child("friends").value as ArrayList<String>
+                    if (friends[0] == "temp") {
+                        friends.removeAt(0);
+                    }
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {}
             })
             friends.add(id!!);
-            System.out.println("friends after add id-------------------")
-            System.out.println(friends)
+
             mUserReference.child("test").setValue("test")
-            System.out.println("friends after add test-------------------")
-            System.out.println(friends)
+
             mUserReference.child("friends").setValue(friends)
 
 
