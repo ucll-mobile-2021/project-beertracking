@@ -1,8 +1,16 @@
 package com.example.beertracking.model
 
-class User(var name: String, var password: String) {
 
-    override fun toString(): String {
-        return "Name: $name\nPassword: $password"
+class User{
+    lateinit var firstname: String
+    lateinit var lastname: String
+
+    constructor(){
+
+    }
+
+    constructor(firstname:String,lastname:String){
+        this.firstname = firstname
+        this.lastname = lastname
     }
 }

@@ -5,42 +5,6 @@
     android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.beertracking.view.AboutFragment"
-        android:label="AboutFragment" />
-    <fragment
-        android:id="@+id/overviewFragment"
-        android:name="com.example.beertracking.view.OverviewFragment"
-        android:label="OverviewFragment" />
-    <fragment
-        android:id="@+id/addFragment"
-        android:name="com.example.beertracking.view.SearchFragment"
-        android:label="AddFragment" >
-        <action
-            android:id="@+id/action_addFragment_to_searchedFragment"
-            app:destination="@id/searchedFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/searchedFragment"
-        android:name="com.example.beertracking.view.SearchedFragment"
-        android:label="SearchedFragment" >
-        <argument
-            android:name="beers"
-            app:argType="com.example.beertracking.model.Beers" />
-        <action
-            android:id="@+id/action_searchedFragment_to_checkinFragment"
-            app:destination="@id/checkinFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/checkinFragment"
-        android:name="com.example.beertracking.view.CheckinFragment"
-        android:label="CheckinFragment" >
-        <argument
-            android:name="beer"
-            app:argType="com.example.beertracking.model.Beer" />
-    </fragment>
     <activity
         android:id="@+id/createAccountActivity"
         android:name="com.example.beertracking.view.CreateAccountActivity"
@@ -63,4 +27,19 @@
         android:name="com.example.beertracking.view.AddBeerActivity"
         android:label="activity_add_beer"
         tools:layout="@layout/activity_add_beer" />
+    <activity
+        android:id="@+id/friendsActivity"
+        android:name="com.example.beertracking.view.FriendsActivity"
+        android:label="activity_friends"
+        tools:layout="@layout/activity_friends" />
+    <activity
+        android:id="@+id/aboutActivity2"
+        android:name="com.example.beertracking.view.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about" />
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.beertracking.view.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

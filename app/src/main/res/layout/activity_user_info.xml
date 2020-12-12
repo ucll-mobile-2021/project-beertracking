@@ -96,22 +96,6 @@
             </TableRow>
         </TableLayout>
 
-        <EditText
-            android:id="@+id/addfriend"
-            android:layout_below="@+id/tl_data"
-            style="@style/viewCustom"
-            android:ems="10"
-            android:hint="@string/Friendsuid"
-            android:inputType="textEmailAddress"
-            />
-        <Button
-            android:id="@+id/btn_add_friend"
-            android:layout_below="@+id/addfriend"
-            style="@style/viewCustom"
-            android:background="@color/colorAccent"
-            android:text="@string/addfriend"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_logout"

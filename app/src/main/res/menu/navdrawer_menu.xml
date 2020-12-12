@@ -28,13 +28,20 @@
         android:icon="@drawable/baseline_sports_bar_white_18dp"/>
 
     <item
+
         android:id="@+id/userInfoActivity"
         android:title="@string/profile"
         android:icon="@drawable/baseline_account_circle_white_18dp" />
 
     <item
+        android:id="@+id/addFriendActivity"
+        android:icon="@drawable/baseline_group_white_18dp"
+        android:title="@string/friends" />
+    <item
         android:id="@+id/aboutActivity"
         android:icon="@drawable/android"
         android:title="@string/about" />
-    </menu>
+
+</menu>
+
 

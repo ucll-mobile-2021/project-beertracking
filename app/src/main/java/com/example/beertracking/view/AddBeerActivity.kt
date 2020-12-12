@@ -2,6 +2,7 @@ package com.example.beertracking.view
 
 import android.Manifest
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -14,10 +15,7 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.webkit.MimeTypeMap
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -58,6 +56,8 @@ class  AddBeerActivity : BaseAppCompatActivity() {
     var et_description: EditText? = null
     var beer: String? = null
     var description: String? = null
+    private var mProgressBar: ProgressDialog? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +65,7 @@ class  AddBeerActivity : BaseAppCompatActivity() {
 
         setContentView(R.layout.activity_add_beer)
 
+        mProgressBar = ProgressDialog(this);
         if (mAuth!!.currentUser == null ){
 
             val intent = Intent(this@AddBeerActivity, LoginActivity::class.java)
@@ -103,7 +104,7 @@ class  AddBeerActivity : BaseAppCompatActivity() {
                     startActivityForResult(gallery, GALLERY_REQUEST_CODE)
                     uploadBtn!!.visibility = View.VISIBLE
                 }
-            }) 
+            })
             storageReference = FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
             super.onCreate(savedInstanceState)
 
@@ -113,6 +114,8 @@ class  AddBeerActivity : BaseAppCompatActivity() {
 
 
     private fun uploadImageToFirebase(name: String, contentUri: Uri) {
+        mProgressBar!!.setMessage("Uploading Image...")
+        mProgressBar!!.show()
         val image = storageReference!!.child("pictures/" + name)
         image.putFile(contentUri).addOnSuccessListener(object :
             OnSuccessListener<UploadTask.TaskSnapshot> {
@@ -126,12 +129,15 @@ class  AddBeerActivity : BaseAppCompatActivity() {
                 Toast.makeText(this@AddBeerActivity, "Image Is Uploaded.", Toast.LENGTH_SHORT)
                     .show()
                 updateMetaData()
+                mProgressBar!!.hide()
                 val intent = Intent(this@AddBeerActivity, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
             }
         }).addOnFailureListener(object : OnFailureListener {
             override fun onFailure(@NonNull e: Exception) {
+                mProgressBar!!.hide()
+
                 Toast.makeText(this@AddBeerActivity, "Upload Failled.", Toast.LENGTH_SHORT).show()
             }
         })

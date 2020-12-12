@@ -12,9 +12,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import com.example.beertracking.R
 import com.example.beertracking.model.Beer
-import com.example.beertracking.view.SearchFragmentDirections
-import com.example.beertracking.view.SearchedFragment
-import com.example.beertracking.view.SearchedFragmentDirections
+
 import kotlinx.android.synthetic.main.layout_searchedbeers.view.*
 
 class RowAdapter(var ctx: Context, var resource : Int, var items : List<Beer>): ArrayAdapter<Beer>(ctx,resource,items){

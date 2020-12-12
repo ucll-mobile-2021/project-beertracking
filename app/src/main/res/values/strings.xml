@@ -25,7 +25,6 @@
     <string name="etEmail">Email</string>
     <string name="etPassword">Password</string>
     <string name="send_password_reset_email">Send password-reset email</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile">Profile</string>
     <string name="logout">Log Out</string>
@@ -39,4 +38,8 @@
     <string name="navigation_drawer_open">navigation drawer open</string>
     <string name="navigation_drawer_close">navigation drawer close</string>
     <string name="Friendsuid">Friend\'s UID</string>
+    <string name="repeatpassword">Repeat password</string>
+    <string name="friends">Friends</string>
+    <string name="name">name</string>
+    <string name="Friendsdubbelpunt">Friends:</string>
 </resources>

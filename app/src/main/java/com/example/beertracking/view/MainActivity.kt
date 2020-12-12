@@ -16,7 +16,7 @@ class MainActivity : BaseAppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (mAuth!!.currentUser == null ){
-
+            mAuth!!.signOut()
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)

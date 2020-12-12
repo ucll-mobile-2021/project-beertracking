@@ -22,6 +22,7 @@ class CreateAccountActivity : AppCompatActivity() {
     private var etLastName: EditText? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
+    private var etPasswordRepeat: EditText? = null
     private var btnCreateAccount: Button? = null
     private var mProgressBar: ProgressDialog? = null
     private var mDatabaseReference: DatabaseReference? = null
@@ -34,6 +35,8 @@ class CreateAccountActivity : AppCompatActivity() {
     private var lastName: String? = null
     private var email: String? = null
     private var password: String? = null
+    private var passwordrepeat: String? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,7 @@ class CreateAccountActivity : AppCompatActivity() {
         etLastName = findViewById<View>(R.id.et_last_name) as EditText
         etEmail = findViewById<View>(R.id.et_email) as EditText
         etPassword = findViewById<View>(R.id.et_password) as EditText
+        etPasswordRepeat = findViewById<View>(R.id.et_passwordrepeat) as EditText
         btnCreateAccount = findViewById<View>(R.id.btn_register) as Button
         mProgressBar = ProgressDialog(this)
         mDatabase = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/")
@@ -60,13 +64,30 @@ class CreateAccountActivity : AppCompatActivity() {
         lastName = etLastName?.text.toString()
         email = etEmail?.text.toString()
         password = etPassword?.text.toString()
+        passwordrepeat = etPasswordRepeat?.text.toString()
 
-        if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName)
-                && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
-
-        } else {
-            Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show()
+        if (TextUtils.isEmpty(firstName) ) {
+            Toast.makeText(applicationContext, "Enter first name!", Toast.LENGTH_LONG).show()
         }
+        if (TextUtils.isEmpty(lastName) ) {
+            Toast.makeText(applicationContext, "Enter last name!", Toast.LENGTH_LONG).show()
+        }
+        if (TextUtils.isEmpty(email) ) {
+            Toast.makeText(applicationContext, "Enter email!", Toast.LENGTH_LONG).show()
+        }
+        if (TextUtils.isEmpty(password) ) {
+            Toast.makeText(applicationContext, "Enter password!", Toast.LENGTH_LONG).show()
+        }
+        if (TextUtils.isEmpty(passwordrepeat) ) {
+            Toast.makeText(applicationContext, "Repeat password!", Toast.LENGTH_LONG).show()
+        }
+        if (password != passwordrepeat){
+            Toast.makeText(applicationContext,  "Password are not identical!", Toast.LENGTH_LONG).show()
+        }
+        if (password!!.length < 6){
+            Toast.makeText(applicationContext, "Password is too short!", Toast.LENGTH_LONG).show()
+        }
+
         mProgressBar!!.setMessage("Registering User...")
         mProgressBar!!.show()
         mAuth!!

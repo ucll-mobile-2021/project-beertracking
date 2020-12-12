@@ -84,6 +84,9 @@ open class BaseAppCompatActivity : AppCompatActivity(), NavigationView.OnNavigat
                 return launch<AboutActivity>()
             }
 
+            R.id.addFriendActivity -> {
+                return launch<FriendsActivity>()
+            }
         }
         return false
     }

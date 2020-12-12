@@ -30,10 +30,17 @@ android:layout_below="@id/et_email"
 android:ems="10"
 android:hint="@string/password"
 android:inputType="textPassword" />
+<EditText
+android:id="@+id/et_passwordrepeat"
+style="@style/viewCustom"
+android:layout_below="@id/et_password"
+android:ems="10"
+android:hint="@string/repeatpassword"
+android:inputType="textPassword" />
 <Button
 android:id="@+id/btn_register"
 style="@style/viewCustom"
-android:layout_below="@id/et_password"
+android:layout_below="@id/et_passwordrepeat"
 android:background="@color/colorAccent"
 android:text="@string/create_act"
 android:textColor="@android:color/white"

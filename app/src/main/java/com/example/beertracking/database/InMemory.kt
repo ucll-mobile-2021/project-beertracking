@@ -2,7 +2,6 @@ package com.example.beertracking.database
 
 import com.example.beertracking.model.Beer
 import com.example.beertracking.model.Beers
-import com.example.beertracking.model.CheckIn
 import com.example.beertracking.model.User
 import com.example.beertracking.seed.Seed
 
@@ -10,13 +9,11 @@ class InMemory() {
 
     var beers = ArrayList<Beer>()
     var users = ArrayList<User>()
-    var checkIns = ArrayList<CheckIn>()
     val seed = Seed()
 
     init {
         beers = seed.beers()
         users = seed.users()
-        checkIns = seed.checkIns()
     }
 
     fun addBeer(beer : Beer){
