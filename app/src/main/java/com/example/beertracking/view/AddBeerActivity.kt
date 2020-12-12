@@ -25,10 +25,12 @@ import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.beertracking.R
+import com.example.beertracking.model.Picture
+import com.example.beertracking.model.PictureHolder
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -48,20 +50,26 @@ class  AddBeerActivity : BaseAppCompatActivity() {
     var galleryBtn: Button? = null
     var currentPhotoPath: String? = null
     private var storageReference: StorageReference? = null
+    private var dataReference: DatabaseReference? = null
     var mAuth: FirebaseAuth? = null
     var uploadBtn: Button? = null
     var uri: Uri? = null
     var filename: String? = null
     var et_beer: EditText? = null
     var et_description: EditText? = null
-    var beer: String? = null
-    var description: String? = null
     private var mProgressBar: ProgressDialog? = null
 
+    private var date: String? = null
+    private var description: String? = null
+    private var user: String? = null
+    private var beer: String? = null
+    private var url: String? = null
+    private var fullname: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         mAuth = FirebaseAuth.getInstance()
+        dataReference = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/").getReference("pictures")
 
         setContentView(R.layout.activity_add_beer)
 
@@ -106,6 +114,7 @@ class  AddBeerActivity : BaseAppCompatActivity() {
                 }
             })
             storageReference = FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
+
             super.onCreate(savedInstanceState)
 
         }
@@ -121,9 +130,13 @@ class  AddBeerActivity : BaseAppCompatActivity() {
             OnSuccessListener<UploadTask.TaskSnapshot> {
             override fun onSuccess(taskSnapshot: UploadTask.TaskSnapshot) {
                 image.getDownloadUrl().addOnSuccessListener(object : OnSuccessListener<Uri> {
+
                     override fun onSuccess(uri: Uri) {
-                        Log.d("tag", "onSuccess: Uploaded Image URl is " + uri.toString())
+                        url = uri.toString()
+                            Log.d("tag", "onSuccess: Uploaded Image URl is " + uri.toString())
                         Picasso.get().load(uri).into(selectedImage)
+                        writeNewImageToDatabase()
+
                     }
                 })
                 Toast.makeText(this@AddBeerActivity, "Image Is Uploaded.", Toast.LENGTH_SHORT)
@@ -142,31 +155,57 @@ class  AddBeerActivity : BaseAppCompatActivity() {
             }
         })
 
+
+
+    }
+
+    private fun writeNewImageToDatabase() {
+        val info = Picture(date!!, description!!, user!!, beer!!, url!!)
+            val key = dataReference!!.push().key
+            dataReference!!.child(key!!).setValue(info)
     }
 
     private fun updateMetaData() {
-        // Create a reference to the file whose metadata we want to change
-        var storage =
-            FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
-        var forestRef = storage!!.child("pictures/${filename}");
+        var mFirebaseInstance = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/")
+        var mFireDatabase = mFirebaseInstance!!.getReference("Users")
+        var userId = mAuth!!.currentUser!!.uid
+        mFireDatabase!!.child(userId!!).addListenerForSingleValueEvent(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                fullname = snapshot.child("firstName").value.toString()  + " " + snapshot.child("lastName").value.toString()
+                // Create a reference to the file whose metadata we want to change
+                var storage =
+                    FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
+                var forestRef = storage!!.child("pictures/${filename}");
 
-        // Create file metadata to update
-        val date = SimpleDateFormat("ddMMyyyy").format(Date())
-        val mUser = mAuth!!.currentUser
-        beer = et_beer?.text.toString()
-        description = et_description?.text.toString()
+                // Create file metadata to update
+                date = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                var mUser = mAuth!!.currentUser
+                user = fullname
+                beer = et_beer?.text.toString()
+                description = et_description?.text.toString()
 
 
-        var metadata = storageMetadata {
-            setCustomMetadata("user", "${mUser!!.uid}")
-            setCustomMetadata("beer", "${beer}")
-            setCustomMetadata("description", "${description}")
-            setCustomMetadata("date", "${date}")
-        }
+                var metadata = storageMetadata {
+                    setCustomMetadata("user", "${mUser!!.uid}")
+                    setCustomMetadata("beer", "${beer}")
+                    setCustomMetadata("description", "${description}")
+                    setCustomMetadata("date", "${date}")
+                }
 
+// Update picture metadata properties
+                forestRef.updateMetadata(metadata)
+            }
 
-// Update metadata properties
-        forestRef.updateMetadata(metadata)
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("error", "Failed to read user", error.toException())
+            }
+        })
+
+    }
+
+    private fun getUserFullName() {
+
+        System.out.println(fullname)
     }
 
     private fun askCameraPermissions() {

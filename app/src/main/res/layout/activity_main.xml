@@ -10,7 +10,20 @@
 
     <!--> here you can add your specific page code. </-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        android:layout_marginTop="60dp">
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_main"/>
+    </LinearLayout>
     <!--> Just like the first part of the code the next part NEEDS to stay here, untouched.
     IF YOU CHANGE THIS OR DONT HAVE IT AT THE END OF THE FILE THE NAV WILL NOT WORK</-->
 

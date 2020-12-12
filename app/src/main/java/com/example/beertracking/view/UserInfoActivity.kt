@@ -1,13 +1,12 @@
 package com.example.beertracking.view
 
+import android.app.ProgressDialog
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
 import com.example.beertracking.R
-import com.example.beertracking.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -25,6 +24,8 @@ class UserInfoActivity : BaseAppCompatActivity() {
     private var tvFriends: TextView? = null
     private var tvEmailVerifiied: TextView? = null
     private var btnLogOut: Button? = null
+    private var mProgressBar: ProgressDialog? = null
+
 
     var userId: String? = null
 
@@ -33,9 +34,13 @@ class UserInfoActivity : BaseAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         setContentView(R.layout.activity_user_info)
+        mProgressBar = ProgressDialog(this)
+        mProgressBar!!.setMessage("Registering User...")
+        mProgressBar!!.show()
 
-        mFirebaseInstance = FirebaseDatabase.getInstance()
+        mFirebaseInstance = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/")
         mFireDatabase = mFirebaseInstance!!.getReference("Users")
+        mAuth = FirebaseAuth.getInstance();
         val user = FirebaseAuth.getInstance().currentUser
 
         tvFirstName = findViewById<View>(R.id.tv_first_name) as TextView
@@ -43,54 +48,40 @@ class UserInfoActivity : BaseAppCompatActivity() {
         tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
         tvFriends = findViewById<View>(R.id.tv_email) as TextView
         tvEmailVerifiied = findViewById<View>(R.id.tv_email_verifiied) as TextView
+        tvEmail = findViewById<View>(R.id.tv_email) as TextView
+
         btnLogOut = findViewById<View>(R.id.btn_logout) as Button
         btnLogOut!!.setOnClickListener { logOut() }
 
-
-        if (user != null) {
-            userId = user.uid
-            tvUid!!.text = userId
-        }
-
-        addUserChangeListener()
-
-        super.onCreate(savedInstanceState)
+        var mUser = mAuth!!.currentUser
+        userId = mUser!!.uid!!.toString()
+        tvEmail!!.text = mUser!!.email!!.toString()
+        tvEmailVerifiied!!.text = mUser!!.isEmailVerified.toString()
+        tvUid!!.text = userId
 
 
-    }
-
-
-
-    private fun addUserChangeListener() {
-
-        mFireDatabase!!.child(userId!!).addValueEventListener(object: ValueEventListener{
+        mFireDatabase!!.child(userId!!).addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val user = snapshot.getValue(User::class.java)
-                if (user==null){
-                    Log.e("error", "Failed to read user")
-                    return
-                }
-                Log.e("INFO", "USER HAS CHANGED")
 
-                tvFirstName!!.text = user.firstname
-                tvLastName!!.text = user.lastname
+                tvFirstName!!.text = snapshot.child("firstName").value.toString()
+                tvLastName!!.text = snapshot.child("lastName").value.toString()
 
                 tvUid!!.text = userId
 
-                var mUser = mAuth!!.currentUser
-                tvEmailVerifiied!!.text = mUser!!.isEmailVerified.toString()
 
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.e("error", "Failed to read user", error.toException())
             }
-
         })
+
+        super.onCreate(savedInstanceState)
+        mProgressBar!!.hide()
+
 
     }
 
-    //TODO User INfo niet meer juist gegeven.
 
     private fun logOut() {
         val intent = Intent(this@UserInfoActivity, LoginActivity::class.java)

@@ -3,19 +3,13 @@ package com.example.beertracking.view
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
-import android.view.Window
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.beertracking.R
-import com.example.beertracking.model.User
-import com.example.beertracking.view.AddBeerActivity
-import com.example.beertracking.view.MainActivity
-import com.example.beertracking.view.UserInfoActivity
 import com.google.android.material.navigation.NavigationView
 
 open class BaseAppCompatActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

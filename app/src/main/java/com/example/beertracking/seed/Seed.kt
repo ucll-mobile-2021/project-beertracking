@@ -1,18 +1,15 @@
 package com.example.beertracking.seed
 
 import com.example.beertracking.model.Beer
-import com.example.beertracking.model.User
 import java.util.*
 import kotlin.collections.ArrayList
 
 class Seed() {
 
     val beers = ArrayList<Beer>()
-    val users = ArrayList<User>()
 
     init {
         seedBeers()
-        seedUsers()
     }
 
     fun seedBeers() {
@@ -74,15 +71,6 @@ class Seed() {
 
     fun beers(): ArrayList<Beer> {
         return beers
-    }
-
-    fun seedUsers() {
-        users.add(User("Admin", "t"))
-        users.add(User("User", "t"))
-    }
-
-    fun users(): ArrayList<User> {
-        return users;
     }
 
 
