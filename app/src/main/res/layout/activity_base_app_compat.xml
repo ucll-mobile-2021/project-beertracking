@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--> The configuration for the navbar(sidemenu) and toolbar(bar at the top of the screen) <!-->
 <androidx.drawerlayout.widget.DrawerLayout
     android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"

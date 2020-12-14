@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.beertracking.R
 import com.google.firebase.auth.FirebaseAuth
 
+//class to request password change.
+// implemented from following site:
+//https://www.appsdeveloperblog.com/firebase-authentication-example-kotlin/
 class LoginActivity : AppCompatActivity() {
 
     private val TAG = "LoginActivity"

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--> The configuration for the friend his info. this gets placed within the friends activity as many times  <!-->
+<!--> as there are friends <!-->
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

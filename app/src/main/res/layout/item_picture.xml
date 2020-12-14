@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--> The configuration for the pictures. this will be placed in the main activity
+view as many times as there are pictures
+Gets invoked by the PictureHolder<!-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
@@ -30,8 +33,11 @@
 
     <ImageView android:id="@+id/imgView"
         android:layout_height="220dp"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_below="@id/tvImgBeer"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
         />
 
 </LinearLayout>

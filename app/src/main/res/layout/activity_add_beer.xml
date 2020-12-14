@@ -54,7 +54,8 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <EditText
+
+        <Spinner
             android:id="@+id/et_beer_name"
             style="@style/viewCustom"
             android:layout_height="wrap_content"

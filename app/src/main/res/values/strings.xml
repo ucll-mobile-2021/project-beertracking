@@ -6,7 +6,6 @@
     <string name="cervisiam">Cervisiam</string>
     <string name="add">Add Beer</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -42,4 +41,702 @@
     <string name="friends">Friends</string>
     <string name="name">name</string>
     <string name="Friendsdubbelpunt">Friends:</string>
+    <string name="loadingmessage">It seems that this is the end of your content!</string>
+    <string name="addmorefriendsmessage">Tip: add more friends to see their beers!</string>
+
+    <!--> list of beers <!-->
+
+        <string-array name="beer_list">
+            <item>Aardbeien Lambic St. Louis</item>
+            <item>Aarschotse Brown</item>
+            <item>Abbaye de Bonne-Esperance</item>
+            <item>Abbaye de Brogne donker</item>
+            <item>Abbaye de Cambron</item>
+            <item>Abbaye de Gembloux</item>
+            <item>Abbaye de Leffe Brown</item>
+            <item>Abbaye de Leffe brown</item>
+            <item>Abbaye de Leffe radieuse</item>
+            <item>Abbaye de Leffe trippel</item>
+            <item>Abbaye de Leffe vieille cuvée</item>
+            <item>Abbaye de la Moinette brune</item>
+            <item>Abbaye de la Moinette brune</item>
+            <item>Abbaye de la Moinette-Special Nouvel An</item>
+            <item>Abbaye des Rocs</item>
+            <item>Abbaye des Rocs Special</item>
+            <item>Abdijbier Affligem brown</item>
+            <item>Abdijbier Affligem dark</item>
+            <item>Abdijbier Affligem trippel</item>
+            <item>Abdijbier Sint-Idesbald brown</item>
+            <item>Abdijbier Sint-Idesbald pale</item>
+            <item>Abdijbier Sint-Idesbald trippel</item>
+            <item>Adler</item>
+            <item>Aerts 1900</item>
+            <item>Affligem red</item>
+            <item>Akila Export</item>
+            <item>Akila Pils</item>
+            <item>Alexander</item>
+            <item>Alfri</item>
+            <item>Ambiorix</item>
+            <item>Anglo pils</item>
+            <item>Antiek</item>
+            <item>Antiek</item>
+            <item>Antigoon</item>
+            <item>Arabier</item>
+            <item>Ardennaise</item>
+            <item>Artevelde</item>
+            <item>Artevelde Grand Cru</item>
+            <item>Augustijn</item>
+            <item>Averechtsen Saison</item>
+            <item>Bacchus</item>
+            <item>Bass-Old Barley Stout</item>
+            <item>Bass-Pale Ale</item>
+            <item>Bavaro</item>
+            <item>Bel Pils</item>
+            <item>Bergenbier</item>
+            <item>Bergenbier</item>
+            <item>Beyerd</item>
+            <item>Bier v/h Kasteel Ramegnies-Chin</item>
+            <item>Biere de L\'Abbaye D\'Aulne 10</item>
+            <item>Biere de L\'Abbaye D\'Aulne 6</item>
+            <item>Biere de L\'Abbaye D\'Aulne 8</item>
+            <item>Bink</item>
+            <item>Bios Vlaamse Bourgogne</item>
+            <item>Biss</item>
+            <item>Bière Darbyste</item>
+            <item>Bière de Pâques</item>
+            <item>Blanche de Namur</item>
+            <item>Blanche des Honelles</item>
+            <item>Blanche des Neiges</item>
+            <item>Bleek</item>
+            <item>Bleek</item>
+            <item>Block Export</item>
+            <item>Block Pils</item>
+            <item>Blond</item>
+            <item>Blond</item>
+            <item>Blond</item>
+            <item>Blond</item>
+            <item>Blonde</item>
+            <item>Blonde</item>
+            <item>Blonde Alken</item>
+            <item>Bocholter Kwikpils Premiumbier</item>
+            <item>Bocholter pils</item>
+            <item>Bock pils</item>
+            <item>Bockor export</item>
+            <item>Bockor pils</item>
+            <item>Bokkereyer</item>
+            <item>Bokrijks Kruikenbier</item>
+            <item>Bornem Dubbel</item>
+            <item>Bornem Trippel</item>
+            <item>Bosbier</item>
+            <item>Boskeun</item>
+            <item>Bourg</item>
+            <item>Bourgogne des Flandres</item>
+            <item>Bourgogne des Flandres</item>
+            <item>Brewmaster Pale Ale</item>
+            <item>Brigand</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brown</item>
+            <item>Brug-ale Belge</item>
+            <item>Brugs tarwebier</item>
+            <item>Brugse Tripel</item>
+            <item>Bruno</item>
+            <item>Bruocsella Grand Cru Lambiek</item>
+            <item>Buffalo</item>
+            <item>Bugel Doppelbock</item>
+            <item>Bugg\'s</item>
+            <item>Bush Beer</item>
+            <item>Cambrinus</item>
+            <item>Campbell\'s Christmas</item>
+            <item>Campbell\'s Scotch</item>
+            <item>Campus</item>
+            <item>Campus Gold</item>
+            <item>Cassis</item>
+            <item>Cassis bier</item>
+            <item>Caves</item>
+            <item>Cervesia</item>
+            <item>Cezarken</item>
+            <item>Chapeau Faro</item>
+            <item>Chapeau Framboise</item>
+            <item>Chapeau Mirabelle</item>
+            <item>Chapeau Pêche</item>
+            <item>Chapeau Tropical</item>
+            <item>Charles Quint</item>
+            <item>Chimay \'Premiere\'</item>
+            <item>Chimay 500ieme</item>
+            <item>Chimay Blue Cap</item>
+            <item>Chimay Grande Reserve</item>
+            <item>Chimay Red Cap</item>
+            <item>Chimay White Cap</item>
+            <item>Christmas</item>
+            <item>Christmas Bell</item>
+            <item>Christmas De Ryck</item>
+            <item>Christmas De Smedt</item>
+            <item>Christmas beer</item>
+            <item>Christmas/Old Musketeer</item>
+            <item>Ciney Blond</item>
+            <item>Ciney Brown</item>
+            <item>Ciney Speciaal</item>
+            <item>Cleopaterken</item>
+            <item>Contra Pils</item>
+            <item>Cornel Bier</item>
+            <item>Corsendonck Agnus</item>
+            <item>Corsendonck Agnus</item>
+            <item>Corsendonck Pater</item>
+            <item>Corsendonck Pater</item>
+            <item>Couckelaerschen Doedel</item>
+            <item>Courtois</item>
+            <item>Cristal Alken</item>
+            <item>Crom-Pils</item>
+            <item>Cupido</item>
+            <item>Cuvée Bosquétia</item>
+            <item>Cuvée De L\'Ermitage</item>
+            <item>Cuvée St. Amand</item>
+            <item>Cuvée de Namur brown</item>
+            <item>Cuvée de Namur brown</item>
+            <item>Cuvée de la Thyria brown</item>
+            <item>Cuvée de la Thyria brown</item>
+            <item>De Brouwers van de Dijle</item>
+            <item>De Koninck</item>
+            <item>De Verboden Vrucht</item>
+            <item>Deca</item>
+            <item>Delbeccha</item>
+            <item>Delirium Tremens</item>
+            <item>Dentergems Witbier</item>
+            <item>Deugniet</item>
+            <item>Dikke Mathilde</item>
+            <item>Dikkenek</item>
+            <item>Dinner Blond</item>
+            <item>Dinner Faro</item>
+            <item>Dobbel Faro</item>
+            <item>Dobbelen Brown</item>
+            <item>Dobbelken</item>
+            <item>Domein Bleek</item>
+            <item>Domein Donker</item>
+            <item>Domus</item>
+            <item>Dorppils</item>
+            <item>Dorpsbier</item>
+            <item>Dort Silbrau</item>
+            <item>Double Blonde</item>
+            <item>Double Engien Spéciale</item>
+            <item>Double Floreffe</item>
+            <item>Doublette</item>
+            <item>Drink Center Sharpe</item>
+            <item>Dubbel Blond</item>
+            <item>Dubbel Blond</item>
+            <item>Dubbel Domus Honingbier</item>
+            <item>Dubbel Gersten</item>
+            <item>Dubbel Palm</item>
+            <item>Dubbel Wit</item>
+            <item>Duivel</item>
+            <item>Duivelsbier</item>
+            <item>Duo</item>
+            <item>Dupont Pils</item>
+            <item>Duvel 7</item>
+            <item>Duvel 8</item>
+            <item>Echte Kriek</item>
+            <item>Edel Brau</item>
+            <item>Egmont Zottegemse Tripel</item>
+            <item>Elckerlijc</item>
+            <item>Ename Dubbel</item>
+            <item>Ename Tripel</item>
+            <item>Esenaar</item>
+            <item>Etoile</item>
+            <item>Eupener Caramel</item>
+            <item>Eupener Export</item>
+            <item>Eupener Extra Light</item>
+            <item>Eupener Kapuziner Klosterbier</item>
+            <item>Eupener Pils</item>
+            <item>Export</item>
+            <item>Export</item>
+            <item>Export</item>
+            <item>Export</item>
+            <item>Export</item>
+            <item>Export Artois</item>
+            <item>Extra</item>
+            <item>Extra Brown</item>
+            <item>Extra Gueuze</item>
+            <item>Extra Pilsener</item>
+            <item>Extra Stout</item>
+            <item>Extra Tafelbier</item>
+            <item>Extra Vieille</item>
+            <item>Eylenbosch Framboos Cuvée Speciale</item>
+            <item>Facon Export</item>
+            <item>Facon Extra Stout</item>
+            <item>Facon Pils</item>
+            <item>Facon Scotch-Christmas</item>
+            <item>Fakir</item>
+            <item>Fancy low alcohol</item>
+            <item>Fantôme</item>
+            <item>Fantôme de Noël</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro</item>
+            <item>Faro Alken</item>
+            <item>Faro Extra</item>
+            <item>Faro Pertotale</item>
+            <item>Felix Kriek Oud Brown</item>
+            <item>Felix Kriekbier</item>
+            <item>Felix oud bruin</item>
+            <item>Felix speciaal oudenaards</item>
+            <item>Festival Gueuze</item>
+            <item>Fitt</item>
+            <item>Flandrien</item>
+            <item>Floreffe brown</item>
+            <item>Fonske</item>
+            <item>Forst</item>
+            <item>Framboise</item>
+            <item>Framboise</item>
+            <item>Framboise Belle-Vue</item>
+            <item>Framboise Cantillon</item>
+            <item>Framboise Jacobins</item>
+            <item>Framboos Lambic</item>
+            <item>Frambozen F. Boon</item>
+            <item>Frambozenbier</item>
+            <item>Frambozenbier</item>
+            <item>Frambozenbier St. Louis</item>
+            <item>Frater Ambrosius</item>
+            <item>Gaumaise</item>
+            <item>Gersten</item>
+            <item>Geuze</item>
+            <item>Geuze F. Boon-Mariage Parfait</item>
+            <item>Gildenbier</item>
+            <item>Ginder-Ale</item>
+            <item>Golden Campina</item>
+            <item>Golden Hop</item>
+            <item>Golden Kenia</item>
+            <item>Gouden Carolus</item>
+            <item>Grand Cru Hoegaarden Tripel</item>
+            <item>Grimbergen Blond</item>
+            <item>Grimbergen Optimo Bruno</item>
+            <item>Grimbergen dubbel</item>
+            <item>Grimbergen trippel</item>
+            <item>Grisette</item>
+            <item>Gueuze</item>
+            <item>Gueuze</item>
+            <item>Gueuze Becasse</item>
+            <item>Gueuze Belle-vue</item>
+            <item>Gueuze Belle-vue cuvee</item>
+            <item>Gueuze Cantillon</item>
+            <item>Gueuze Caveau</item>
+            <item>Gueuze Caves Bruegel</item>
+            <item>Gueuze De Neve</item>
+            <item>Gueuze De Troch</item>
+            <item>Gueuze Extra Cave St. Pierre</item>
+            <item>Gueuze Girardin</item>
+            <item>Gueuze Lambic</item>
+            <item>Gueuze Lambic Jacobins</item>
+            <item>Gueuze Lambic Mort Subite</item>
+            <item>Gueuze Lambic St.-Louis</item>
+            <item>Gueuze Vieux Foudre</item>
+            <item>Gulden draak</item>
+            <item>Haechts Witbier</item>
+            <item>Hapkin</item>
+            <item>Helles Lagerbier</item>
+            <item>Het Kapittel-abt</item>
+            <item>Het Kapittel-dubbel</item>
+            <item>Het Kapittel-pater</item>
+            <item>Het Kapittel-prior</item>
+            <item>Hoegaarden</item>
+            <item>Horse-ale</item>
+            <item>Houten Kop</item>
+            <item>Ichtegem\'s oud bruin</item>
+            <item>Jack-Op</item>
+            <item>Jack-op Ernest Claes</item>
+            <item>John Martin\'s Special</item>
+            <item>John Smith\'s Pale Ale</item>
+            <item>John Smith\'s Scotch Ale</item>
+            <item>Judas</item>
+            <item>Julius</item>
+            <item>Jupiler</item>
+            <item>Jupiler N.A.</item>
+            <item>Kastaar</item>
+            <item>Kasteelbier Ingelmunster</item>
+            <item>Kerelsbier donker</item>
+            <item>Kerelsbier licht</item>
+            <item>Kerstbier</item>
+            <item>Kerstbier</item>
+            <item>Kerstbier</item>
+            <item>Ketje</item>
+            <item>Kir-Royal St.-Louis</item>
+            <item>Kob Pilsener</item>
+            <item>Koningsbrau</item>
+            <item>Kortrijk 800</item>
+            <item>Kriek</item>
+            <item>Kriek</item>
+            <item>Kriek</item>
+            <item>Kriek</item>
+            <item>Kriek Belle-Vue</item>
+            <item>Kriek Belle-Vue Cuvee</item>
+            <item>Kriek Cantillon</item>
+            <item>Kriek Caves Bruegel</item>
+            <item>Kriek De Neve</item>
+            <item>Kriek De Troch</item>
+            <item>Kriek F. Boon</item>
+            <item>Kriek Girardin</item>
+            <item>Kriek Lambic</item>
+            <item>Kriek Lambic</item>
+            <item>Kriek Lambic Jacobins</item>
+            <item>Kriek Lambic Mort Subite</item>
+            <item>Kriek Lambic St. Louis</item>
+            <item>Kriek Sherry Poesy Old Beersel</item>
+            <item>Kriekenbier</item>
+            <item>Kronenbourg</item>
+            <item>Kronenbourg light</item>
+            <item>Kruger Export</item>
+            <item>Kruger Pils</item>
+            <item>L\'Vapeur en Folie Blonde</item>
+            <item>L\'Vapeur red</item>
+            <item>La Bergeotte</item>
+            <item>La Chouffe</item>
+            <item>La Durboyse</item>
+            <item>La Gauloise 6</item>
+            <item>La Gauloise 8</item>
+            <item>La Gaumaise Blonde</item>
+            <item>La Meilleure Floreffe</item>
+            <item>La Moneuse</item>
+            <item>La Moneuse Spéciale Noël</item>
+            <item>La Montagnarde</item>
+            <item>La Quenast</item>
+            <item>La Thyloise</item>
+            <item>La Vieille Bon-Secours</item>
+            <item>Lambic</item>
+            <item>Lambiek</item>
+            <item>Lambiek</item>
+            <item>Lambiek</item>
+            <item>Lambik Girardin-Kriek</item>
+            <item>Lambik Girardin-jonge</item>
+            <item>Lambik Girardin-oude</item>
+            <item>Lamme Gisj</item>
+            <item>Lamoral d\'Egmont</item>
+            <item>Lamot Pilsor</item>
+            <item>Le Pavé de l\'Ours</item>
+            <item>Leffe Trippel</item>
+            <item>Leroy Stout</item>
+            <item>Leuvens Witbier</item>
+            <item>Lichtaarts Kwezel</item>
+            <item>Liefmans Frambozen</item>
+            <item>Liefmans Goudenband</item>
+            <item>Liefmans Kriek</item>
+            <item>Liefmans oud bruin</item>
+            <item>Liezelse Witte</item>
+            <item>Loburg</item>
+            <item>Loebas</item>
+            <item>Loteling donker</item>
+            <item>Loteling licht</item>
+            <item>Lowie Kators/Malmédy brown</item>
+            <item>Lucifer</item>
+            <item>Luxem</item>
+            <item>Mackeson Stout</item>
+            <item>Maes Pils</item>
+            <item>Mai-Bock</item>
+            <item>Malmédy brown</item>
+            <item>Maltosa</item>
+            <item>Marckloff</item>
+            <item>Maredsesous 10</item>
+            <item>Maredsesous 6</item>
+            <item>Maredsesous 8</item>
+            <item>Maredsesous 9</item>
+            <item>McChouffe</item>
+            <item>McEwan\'s Christmas Ale</item>
+            <item>McEwan\'s Scotch Ale</item>
+            <item>Mechelschen Bruynen</item>
+            <item>Meibok</item>
+            <item>Mill\'s Extra Stout</item>
+            <item>Mill\'s Pale Ale</item>
+            <item>Mill\'s Scotch</item>
+            <item>Minty</item>
+            <item>Moeder Overste</item>
+            <item>Moinette Biologique</item>
+            <item>Mort Subite Cassis</item>
+            <item>Mort Subite Framboise</item>
+            <item>Mort Subite Peche</item>
+            <item>Mosel Bier</item>
+            <item>Myn\'s pils</item>
+            <item>Myrtille</item>
+            <item>Méértzen bier</item>
+            <item>Napoleon</item>
+            <item>Ne Flierefluiter</item>
+            <item>Newton Apple</item>
+            <item>Neyt Export</item>
+            <item>Neyt Pils</item>
+            <item>Nostradamus</item>
+            <item>Notger</item>
+            <item>Nounou</item>
+            <item>Nounou</item>
+            <item>Oerbier</item>
+            <item>Ops-ale</item>
+            <item>Orval</item>
+            <item>Oud Bruin</item>
+            <item>Oud Hell</item>
+            <item>Oud Kriekenbier</item>
+            <item>Oud Zottegems bier</item>
+            <item>Oud bier Blond</item>
+            <item>Oud bier Bruin</item>
+            <item>Ouden Bruin</item>
+            <item>Ouden Tripel</item>
+            <item>Ouden bruinen</item>
+            <item>Oudenaards Bruin</item>
+            <item>Oudenaards Wit Tarwebier</item>
+            <item>Paas Kriek</item>
+            <item>Paasbier</item>
+            <item>Paling</item>
+            <item>Palm Green</item>
+            <item>Pater Brown</item>
+            <item>Pater Lieven</item>
+            <item>Paulus</item>
+            <item>Pauwel Kwak</item>
+            <item>Pax-pils</item>
+            <item>Pee Klak</item>
+            <item>Peeterman</item>
+            <item>Perzikbier</item>
+            <item>Perziken bier</item>
+            <item>Peter Benoit</item>
+            <item>Petrus</item>
+            <item>Pick-up</item>
+            <item>Piedboeuf Blonde</item>
+            <item>Piedboeuf Triple</item>
+            <item>Piedboeuf dark</item>
+            <item>Pils</item>
+            <item>Pils Artisanale</item>
+            <item>Pilsen bleek-bruin</item>
+            <item>Piraat</item>
+            <item>Polderbier Bitter</item>
+            <item>Polderbier Fruitig</item>
+            <item>Pony-Stout</item>
+            <item>Poorter</item>
+            <item>Poperings Hommelbier</item>
+            <item>Poperings Hommelbier</item>
+            <item>Postel</item>
+            <item>Postel Abdijbier</item>
+            <item>Prik Pils</item>
+            <item>Primus Haacht Pils</item>
+            <item>Primus-Pils Christmas</item>
+            <item>Promesse</item>
+            <item>Prosit</item>
+            <item>Punch Beer</item>
+            <item>Pêche-Lambiek St.-Louis</item>
+            <item>Pêcheresse</item>
+            <item>Queue de Charrue</item>
+            <item>Raf Export</item>
+            <item>Redor Pils</item>
+            <item>Reinbrau</item>
+            <item>Relax</item>
+            <item>Ridder</item>
+            <item>Riva 2000</item>
+            <item>Riva Pils</item>
+            <item>Riva Triple</item>
+            <item>Rochus</item>
+            <item>Rodal</item>
+            <item>Rodark</item>
+            <item>Rodea Gueuze</item>
+            <item>Rodea Kriek</item>
+            <item>Rodenbach</item>
+            <item>Rodenbach Grand Cru</item>
+            <item>Roman Oudenaards</item>
+            <item>Romy Export</item>
+            <item>Romy Luxe</item>
+            <item>Romy Pils</item>
+            <item>Rose de Cambrinus</item>
+            <item>Routiers</item>
+            <item>Royal Ale</item>
+            <item>Royale Blonde</item>
+            <item>Réserve Marie de Hongrie</item>
+            <item>Safir</item>
+            <item>Safir</item>
+            <item>Saint-Ghislain</item>
+            <item>Saint-Hubert Blonde</item>
+            <item>Saison</item>
+            <item>Saison 1900</item>
+            <item>Saison Dupont</item>
+            <item>Saison Dupont Biologique</item>
+            <item>Saison Regal</item>
+            <item>Saison d\'Erezée</item>
+            <item>Saison de Pipaix</item>
+            <item>Saison de Silly</item>
+            <item>Salvator</item>
+            <item>Sanctus</item>
+            <item>Sas Export</item>
+            <item>Sas Pils</item>
+            <item>Sasbräu</item>
+            <item>Satan dark</item>
+            <item>Satan golden</item>
+            <item>Schavuit</item>
+            <item>Schwendi</item>
+            <item>Scotch</item>
+            <item>Scotch de Silly</item>
+            <item>Seule</item>
+            <item>Sezoens</item>
+            <item>Sezoens Quattro</item>
+            <item>Sint-Bernardus Tripel</item>
+            <item>Skipper Ale</item>
+            <item>Slag Lagerbier</item>
+            <item>Sloeber</item>
+            <item>Sorcières de Ellezeles</item>
+            <item>Spanik Gueuze</item>
+            <item>Sparta Pils</item>
+            <item>Speciaal</item>
+            <item>Speciaal Natuurbier</item>
+            <item>Special</item>
+            <item>Special Alken</item>
+            <item>Special Block 6</item>
+            <item>Special Blond</item>
+            <item>Special De Ryck</item>
+            <item>Special Katje</item>
+            <item>Special Roman</item>
+            <item>Speciale Aerts</item>
+            <item>Speciale Baf</item>
+            <item>Speciale Neval</item>
+            <item>Speciale Op-Ale</item>
+            <item>Speciale Palm</item>
+            <item>Speciale Stop</item>
+            <item>Spécial Noel</item>
+            <item>Spéciale Gigi</item>
+            <item>Spéciale d\'Avignon</item>
+            <item>St. Benedict</item>
+            <item>St. Benoît brown</item>
+            <item>St. Benoît brown</item>
+            <item>St. Feuillien</item>
+            <item>St. Feuillien Brown</item>
+            <item>St. Feuillien Cuvée de Noël</item>
+            <item>St. Feuillien Cuvée de Noël</item>
+            <item>St. Feuillien brown</item>
+            <item>St. Feuillien brown</item>
+            <item>St. Feuillien brown</item>
+            <item>St. Paul Double</item>
+            <item>St. Paul Triple</item>
+            <item>St. Sebastiaan Dark</item>
+            <item>St. Sebastiaan Grand Cru</item>
+            <item>St. Sixtus Abdij Abt</item>
+            <item>St. Sixtus Abdij Pater</item>
+            <item>St. Sixtus Abdij Prior</item>
+            <item>Star Blond</item>
+            <item>Star Brown</item>
+            <item>Steedje</item>
+            <item>Steedje Special</item>
+            <item>Steenbrugge Dubbel</item>
+            <item>Steenbrugge Tripel</item>
+            <item>Steendonk</item>
+            <item>Stella Artois</item>
+            <item>Stella Artois N.A.</item>
+            <item>Stella Artois light</item>
+            <item>Ster Ale</item>
+            <item>Ster Christmas</item>
+            <item>Stille Nacht</item>
+            <item>Stoeren Bonk</item>
+            <item>Stout</item>
+            <item>Stout Extra</item>
+            <item>Straffe Hendrik</item>
+            <item>Stropken Grand Cru</item>
+            <item>Strubbe Stout</item>
+            <item>Student</item>
+            <item>Sublim</item>
+            <item>Sublim Light</item>
+            <item>Super</item>
+            <item>Super 64</item>
+            <item>Super Pils</item>
+            <item>Super Pils</item>
+            <item>Super brown</item>
+            <item>Super des Fagnes</item>
+            <item>Super extra</item>
+            <item>Supergeuze</item>
+            <item>Supra</item>
+            <item>Supra</item>
+            <item>T.V.</item>
+            <item>Tafel Hell</item>
+            <item>Tafelstout</item>
+            <item>Teutenbier</item>
+            <item>Titje</item>
+            <item>Toison D\'Or</item>
+            <item>Tongerlo Dubbel</item>
+            <item>Tongerlo Tripel</item>
+            <item>Tonneke</item>
+            <item>Tourtel Brown</item>
+            <item>Tourtel amber</item>
+            <item>Tourtel brown</item>
+            <item>Trappistenbier Dubbel</item>
+            <item>Trappistenbier Extra</item>
+            <item>Trappistenbier Tripel</item>
+            <item>Trappistenbier Westvleteren Abt</item>
+            <item>Trappistenbier Westvleteren Extra</item>
+            <item>Trappistenbier Westvleteren Special</item>
+            <item>Trappistes Rochefort 10</item>
+            <item>Trappistes Rochefort 6</item>
+            <item>Trappistes Rochefort 8</item>
+            <item>Trial Alken</item>
+            <item>Trio</item>
+            <item>Tripel</item>
+            <item>Tripel Loo</item>
+            <item>Triple Block</item>
+            <item>Triple Bock</item>
+            <item>Triple Floreffe</item>
+            <item>Triple Loo</item>
+            <item>Triple Moine</item>
+            <item>Triple Villers</item>
+            <item>Triplor</item>
+            <item>Ulricher Pils</item>
+            <item>Unic Gigi</item>
+            <item>Upper 19</item>
+            <item>Urtyp</item>
+            <item>Vaartlander</item>
+            <item>Val-Dieu Triple</item>
+            <item>Vapeur LégŠre Blonde</item>
+            <item>Vedett</item>
+            <item>Vera Pils</item>
+            <item>Very Diest</item>
+            <item>Vichtenaar</item>
+            <item>Vieille Saison</item>
+            <item>Vieille Salme</item>
+            <item>Vieille Villers</item>
+            <item>Vieux Bruges Framboos</item>
+            <item>Vieux Bruges Gueuze</item>
+            <item>Vieux Bruges Kriek</item>
+            <item>Vieux-Temps</item>
+            <item>Vigneronne</item>
+            <item>Villers St. Ghislain</item>
+            <item>Vlaams Wit/Blanch-ke</item>
+            <item>Vlaskop</item>
+            <item>Vondel</item>
+            <item>Watney\'s Red Barrel</item>
+            <item>Watneys Christmas</item>
+            <item>Watneys Pale-Ale</item>
+            <item>Watneys Scotch</item>
+            <item>Watneys Stout</item>
+            <item>Watou\'s Wit</item>
+            <item>Westmalle Extra</item>
+            <item>Westmalle Trappist Dubbel</item>
+            <item>Westmalle Trappist Tripel</item>
+            <item>Westvleteren Acht Blue Cap</item>
+            <item>Whitbread Extra Stout</item>
+            <item>Whitbread Pale Ale</item>
+            <item>Wiel\'s</item>
+            <item>Wiels</item>
+            <item>Wieze Pils</item>
+            <item>Wilson Mild</item>
+            <item>Witkap Pater/Dubbele Pater</item>
+            <item>Witkap Pater/Stimulo</item>
+            <item>Witkap Pater/Tripel</item>
+            <item>Wonderbier</item>
+            <item>Wonderlight</item>
+            <item>X-Mas</item>
+            <item>XMas 8</item>
+            <item>Yperman</item>
+            <item>Zeelse houten kop</item>
+            <item>Zottegems</item>
+            <item>Zottegemse Grand Cru</item>
+            <item>Zulte oud bruin</item>
+            <item>brown</item>
+            <item>brownhaut 8</item>
+            <item>dark</item>
+
+        </string-array>
 </resources>

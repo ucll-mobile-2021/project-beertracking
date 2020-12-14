@@ -94,7 +94,15 @@
                     android:textSize="20sp" />
 
             </TableRow>
+            <Button
+                android:id="@+id/btn_verify"
+                style="@style/viewCustom"
+                android:background="@color/colorAccent"
+                android:text="@string/create_act"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
         </TableLayout>
+
 
 
         <Button

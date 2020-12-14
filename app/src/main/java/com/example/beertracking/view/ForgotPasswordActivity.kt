@@ -12,6 +12,9 @@ import android.widget.Toast
 import com.example.beertracking.R
 import com.google.firebase.auth.FirebaseAuth
 
+//class to request password change.
+// implemented from following site:
+//https://www.appsdeveloperblog.com/firebase-authentication-example-kotlin/
 class ForgotPasswordActivity : AppCompatActivity() {
 
     private val TAG = "ForgotPasswordActivity"

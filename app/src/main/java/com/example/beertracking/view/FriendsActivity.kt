@@ -11,8 +11,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.lang.Exception
 
-
+// Class to show your current friends
 class FriendsActivity : BaseAppCompatActivity() {
+
+    //globar variables
+
     private var mDatabaseReference: DatabaseReference? = null
 
     private var mDatabase: FirebaseDatabase? = null
@@ -22,7 +25,6 @@ class FriendsActivity : BaseAppCompatActivity() {
     private  var listview: ListView? = null
     private var alreadyFriends: Boolean? = false;
 
-    //global variables
     private var userId: String? = null
     private var friendId: String? = null
 
@@ -35,15 +37,14 @@ class FriendsActivity : BaseAppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        mProgressBar = ProgressDialog(this)
-        mProgressBar!!.setMessage("Fetching Data...")
-        mProgressBar!!.show()
+        //set firebase instances
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/")
         val user = mAuth!!.currentUser
         userId = user!!.uid
         mDatabaseReference = mDatabase!!.getReference("Users")
 
+        //set contentview and thereafter the layout items and listeners
         setContentView(R.layout.activity_friends)
         btnAddFriend = findViewById<View>(R.id.add_friend_btn) as Button
         btnAddFriend!!.setOnClickListener { addFriend() }
@@ -52,6 +53,8 @@ class FriendsActivity : BaseAppCompatActivity() {
 
         friendlist = ArrayList()
         ids = ArrayList()
+
+        // create an adapter to fill the layout with friends dynamically
         val adapter = ArrayAdapter(this, R.layout.friend_info, R.id.friendusername,
             friendlist!!
         )
@@ -60,20 +63,20 @@ class FriendsActivity : BaseAppCompatActivity() {
         mDatabaseReference!!.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (or in snapshot.children){
-                    System.out.println("OR")
-                    System.out.println(or)
-                    System.out.println(or.key.toString())
+                    // add friend ids of current user to the id arraylist
                     ids!!.add(or.key.toString())
                 }
                 for (ds in snapshot.child(userId!!).child("friends").children) {
                     for (ds2 in snapshot.children) {
                         if (ds2.key == ds.key) {
+                            // add full names to the arraylist of names of friends
                             var firstname =  ds2.child("firstName").value.toString()
                             var lastname = ds2.child("lastName").value.toString()
                             friendlist!!.add(firstname + " " + lastname)
                         }
 
                     }
+                    //setting the adapter
                     listview!!.setAdapter(adapter)
                 }
             }
@@ -84,8 +87,7 @@ class FriendsActivity : BaseAppCompatActivity() {
             })
 
 
-
-        mProgressBar!!.hide()
+        //calling super.oncreate for navbar
         super.onCreate(savedInstanceState)
 
     }
@@ -94,49 +96,55 @@ class FriendsActivity : BaseAppCompatActivity() {
 
 
     private fun addFriend() {
+        //get ready for a shitshow....
+
         etFriendId = findViewById<View>(R.id.et_friendid) as EditText
         friendId = etFriendId!!.text.toString()
+        // call function
         initlistener()
+        // check if textfield is not empty
         if (TextUtils.isEmpty(friendId)) {
             Toast.makeText(applicationContext, "Enter friend's UID", Toast.LENGTH_LONG).show()
         }
         else{
+            // check if the filled in uid is not his own uid.
+                //remember: treat the users like idi... creative people!
             if ((friendId)== userId) {
                 Toast.makeText(applicationContext, "This is your own UID. Use your friend's UID", Toast.LENGTH_LONG).show()
                 etFriendId!!.setText("")
             }
             else {
-
+                // if you two aren't friends yet
                 if (alreadyFriends == false) {
-                    System.out.println("IDS")
-                    System.out.println(ids)
+                    // check the ids to see if the filled in id is an existing id and not gibberish
                     var idexists = false
-                    System.out.println("CHECKING NOW_______")
                     for (id in ids!!){
                         if (id == friendId){
                             idexists = true
                         }
                     }
-                    System.out.println("idexists")
-                    System.out.println(idexists)
+
+                    //if the uid filled in exists...
                     if (idexists){
-                        System.out.println("CONTAINS IT")
-                        System.out.println("--------------------------------")
+                        //add the friend to the current users friends
                         val currentUserDb = mDatabaseReference!!.child(userId!!).child("friends")
                         currentUserDb.child(friendId!!).setValue("true")
 
+                        //add the current user to the friends friends
                         val currentUserDb2 = mDatabaseReference!!.child(friendId!!).child("friends")
                         currentUserDb2.child(userId!!).setValue("true")
+
+                        //let them know!
                         Toast.makeText(applicationContext, "Jullie zijn bevriend!", Toast.LENGTH_LONG)
                             .show()
 
+                        //load the overview page again
                         val intent = Intent(this@FriendsActivity, MainActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         startActivity(intent)
                     }
                     else   {
-                        System.out.println("NOT CONTAIN IT")
-                        System.out.println("--------------------------------")
+                        //ouch, the uid is not correct!
                         etFriendId!!.setText("")
                         Toast.makeText(applicationContext, "This UID is not correct!", Toast.LENGTH_LONG)
                             .show()
@@ -144,6 +152,7 @@ class FriendsActivity : BaseAppCompatActivity() {
                     }
 
                 } else {
+                    //ow, they were already friends..
                     etFriendId!!.setText("")
                     Toast.makeText(applicationContext, "Jullie waren al bevriend!", Toast.LENGTH_LONG)
                         .show()
@@ -153,13 +162,17 @@ class FriendsActivity : BaseAppCompatActivity() {
     }
 
     private fun initlistener() {
+        //make a singelavalueeventlistener
         mDatabaseReference!!.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                //check if there exists a user with the filled in uid
                 try { val idcorrect = snapshot.child(friendId!!)
                 if (idcorrect == null) {
+                    //it doesnt exist!
                     Toast.makeText(applicationContext, "Not a correct UID", Toast.LENGTH_LONG)
                         .show()
                 } else {
+                    // ok it exists. lets get his friends and check if they are alreay befriended
                     val exists = snapshot.child(userId!!).child("friends").child(friendId!!).value;
 
                     if (exists == null) {
@@ -168,7 +181,10 @@ class FriendsActivity : BaseAppCompatActivity() {
                         alreadyFriends = true
                     }
                 }
+
                 }
+                //catch an exception that will be thrown if it doesn't exist.
+                // since the db link will not exist in that case
                 catch (e: Exception){
                     Toast.makeText(applicationContext, "Not a correct UID", Toast.LENGTH_LONG)
                         .show()
@@ -180,6 +196,10 @@ class FriendsActivity : BaseAppCompatActivity() {
             }
 
         })
+
+        //I will be honest, no idea why i check twice if they are already befriended.
+        // I had a reason though! I think...
+        // oh well, it works. NO TOUCHIE
 
 
     }
