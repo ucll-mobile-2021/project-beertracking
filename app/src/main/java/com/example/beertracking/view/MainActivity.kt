@@ -47,7 +47,7 @@ class MainActivity : BaseAppCompatActivity() {
         mFirebaseInstance = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/")
         mFireDatabase = mFirebaseInstance!!.getReference("Users")
         mAuth = FirebaseAuth.getInstance()
-        userId = mAuth!!.currentUser!!.uid
+
         setContentView(R.layout.activity_main)
 
         //check if we are logged in. just to be sure
@@ -62,6 +62,7 @@ class MainActivity : BaseAppCompatActivity() {
         }
         //otherwise...
         else {
+            userId = mAuth!!.currentUser!!.uid
             //local variable and a reference to the storage
             var friends: ArrayList<String> = ArrayList()
             dataReference = FirebaseDatabase.getInstance("https://beertracker-56e99-default-rtdb.europe-west1.firebasedatabase.app/").getReference(
@@ -169,7 +170,10 @@ class MainActivity : BaseAppCompatActivity() {
     //stop the adapterlistener if the page closes
     override fun onStop() {
         super.onStop()
-        mAdapter!!.stopListening()
+        if( mAdapter != null){
+            mAdapter!!.stopListening()
+        }
+
     }
 
 }
