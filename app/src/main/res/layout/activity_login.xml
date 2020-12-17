@@ -27,21 +27,25 @@
         android:text="@string/login_title"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
-    <TextView
-        android:id="@+id/tv_forgot_password"
-        style="@style/viewCustom"
-        android:layout_below="@id/btn_login"
-        android:clickable="true"
-        android:gravity="center_horizontal"
-        android:text="Forgot Password?"
-        android:textSize="20sp" />
-    <Button
-        android:id="@+id/btn_register_account"
-        style="@style/viewCustom"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"
-        android:text="@string/create_act"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
-</RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            style="@style/viewCustom"
+            android:layout_below="@+id/btn_register_account"
+            android:layout_marginTop="-234dp"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:text="Forgot Password?"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_register_account"
+            style="@style/viewCustom"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="497dp"
+            android:background="@color/colorAccent"
+            android:text="@string/create_act"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
 </layout>

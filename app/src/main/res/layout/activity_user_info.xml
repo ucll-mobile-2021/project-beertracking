@@ -17,8 +17,8 @@
 
         <ImageButton
             android:id="@+id/ib_profile_pic"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="207dp"
+            android:layout_height="143dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:background="@drawable/baseline_account_circle_white_18dp"
@@ -78,7 +78,9 @@
 
             </TableRow>
 
-            <TableRow android:layout_width="678dp">
+            <TableRow
+                android:layout_width="678dp"
+                tools:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,22 +96,30 @@
                     android:textSize="20sp" />
 
             </TableRow>
+
             <Button
+
                 android:id="@+id/btn_verify"
                 style="@style/viewCustom"
                 android:background="@color/colorAccent"
                 android:text="@string/create_act"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
         </TableLayout>
-
 
 
         <Button
             android:id="@+id/btn_logout"
             style="@style/viewCustom"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="82dp"
+            android:layout_width="340dp"
+            android:layout_height="27dp"
+            android:layout_below="@+id/tl_data"
+            android:layout_alignStart="@+id/ib_profile_pic"
+            android:layout_alignEnd="@+id/ib_profile_pic"
+            android:layout_marginStart="-84dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="-85dp"
             android:background="@color/colorAccent"
             android:text="@string/logout"
             android:textColor="@android:color/white"
