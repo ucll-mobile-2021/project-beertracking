@@ -16,7 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow>
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/et_friendid"
@@ -25,6 +29,7 @@
                 android:hint="@string/Friendsuid"
                 android:inputType="text"
                 android:layout_marginTop="300dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
         </TableRow>
 
         <TableRow
@@ -37,7 +42,7 @@
                 android:layout_height="73dp"
                 android:layout_below="@+id/et_friendid"
                 android:layout_marginBottom="27dp"
-                android:background="@color/colorAccent"
+                android:background="@drawable/rounded_corners"
                 android:text="@string/addfriend"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
@@ -52,7 +57,7 @@
         <TableRow>
             <ListView
                 android:id="@+id/friendlistview"
-                android:layout_below="@id/t3_data"
+                android:layout_width="wrap_content"
                 />
 
         </TableRow>
