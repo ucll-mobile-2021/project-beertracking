@@ -20,13 +20,14 @@
 
         <!--> the recyclerview where all the picture will be added in <!-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rv_main" />
         <!--> The messages that will show when the recyclerview does not fill the screen <!-->
         <!--> As soon as there are enough picture it dissapears by getting pushed out of the screen  <!-->
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="match_parent"

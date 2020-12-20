@@ -7,7 +7,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
+import com.google.android.material.textfield.TextInputEditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +25,8 @@ class LoginActivity : AppCompatActivity() {
     private var password: String? = null
     //UI elements
     private var tvForgotPassword: TextView? = null
-    private var etEmail: EditText? = null
-    private var etPassword: EditText? = null
+    private var etEmail: TextInputEditText? = null
+    private var etPassword: TextInputEditText? = null
     private var btnLogin: Button? = null
     private var btnCreateAccount: Button? = null
     private var mProgressBar: ProgressDialog? = null
@@ -41,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun initialise() {
         tvForgotPassword = findViewById<View>(R.id.tv_forgot_password) as TextView
-        etEmail = findViewById<View>(R.id.et_email) as EditText
-        etPassword = findViewById<View>(R.id.et_password) as EditText
+        etEmail = findViewById<View>(R.id.et_email) as TextInputEditText
+        etPassword = findViewById<View>(R.id.et_password) as TextInputEditText
         btnLogin = findViewById<View>(R.id.btn_login) as Button
         btnCreateAccount = findViewById<View>(R.id.btn_register_account) as Button
         mProgressBar = ProgressDialog(this)

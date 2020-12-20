@@ -53,7 +53,7 @@ class UserInfoActivity : BaseAppCompatActivity() {
         tvUid = findViewById<View>(R.id.tv_uid) as TextView
         tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
         tvFriends = findViewById<View>(R.id.tv_email) as TextView
-        tvEmailVerifiied = findViewById<View>(R.id.tv_email_verifiied) as TextView
+        tvEmailVerifiied = findViewById<View>(R.id.tv_email_verified) as TextView
         tvEmail = findViewById<View>(R.id.tv_email) as TextView
 
         //set the buttons and their listeners

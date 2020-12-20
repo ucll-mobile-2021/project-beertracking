@@ -4,46 +4,72 @@
     <!--> The configuration for the login page <!-->
 
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <EditText
-        android:id="@+id/et_email"
-        style="@style/viewCustom"
-        android:ems="10"
-        android:hint="@string/etEmail"
-        android:inputType="textEmailAddress" />
-    <EditText
-        android:id="@+id/et_password"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_email"
-        android:ems="10"
-        android:hint="@string/etPassword"
-        android:inputType="textPassword" />
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_password"
-        android:background="@color/colorAccent"
-        android:text="@string/login_title"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            android:paddingTop="5dp"
+            app:srcCompat="@drawable/baseline_account_circle_white_18dp"
+            app:tint="@color/black" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@id/et_email"
+                style="@style/viewCustom"
+                android:ems="10"
+                android:hint="@string/etEmail"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_email_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@id/et_password"
+                style="@style/viewCustom"
+                android:layout_below="@id/et_email"
+                android:ems="10"
+                android:hint="@string/etPassword"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/viewCustom"
+
+            android:layout_below="@id/et_password_layout"
+            android:background="@drawable/rounded_corners"
+            android:text="@string/login_title"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_forgot_password"
             style="@style/viewCustom"
-            android:layout_below="@+id/btn_register_account"
-            android:layout_marginTop="-234dp"
+            android:layout_below="@id/btn_login"
             android:clickable="true"
             android:gravity="center_horizontal"
             android:text="Forgot Password?"
             android:textSize="20sp" />
 
+
         <Button
+
             android:id="@+id/btn_register_account"
             style="@style/viewCustom"
-            android:layout_below="@+id/btn_login"
-            android:layout_marginTop="497dp"
-            android:background="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_corners"
             android:text="@string/create_act"
             android:textColor="@android:color/white"
             android:textStyle="bold" />

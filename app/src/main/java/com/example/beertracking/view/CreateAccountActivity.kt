@@ -154,17 +154,17 @@ class CreateAccountActivity : AppCompatActivity() {
         // https://console.firebase.google.com/project/beertracker-56e99/authentication/users
         val mUser = mAuth!!.currentUser;
         mUser!!.sendEmailVerification()
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this@CreateAccountActivity,
-                                "Verification email sent to " + mUser.getEmail(),
-                                Toast.LENGTH_SHORT).show()
-                    } else {
-                        Log.e(TAG, "sendEmailVerification", task.exception)
-                        Toast.makeText(this@CreateAccountActivity,
-                                "Failed to send verification email.",
-                                Toast.LENGTH_SHORT).show()
-                    }
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this@CreateAccountActivity,
+                        "Verification email sent to " + mUser.getEmail(),
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e(TAG, "sendEmailVerification", task.exception)
+                    Toast.makeText(this@CreateAccountActivity,
+                        "Failed to send verification email.",
+                        Toast.LENGTH_SHORT).show()
                 }
+            }
     }
 }

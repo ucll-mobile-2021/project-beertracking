@@ -17,12 +17,17 @@
 
         <ImageButton
             android:id="@+id/ib_profile_pic"
-            android:layout_width="207dp"
-            android:layout_height="143dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/baseline_account_circle_white_18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="93dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="150dp"
+            android:background="@drawable/download"
             android:scaleType="centerCrop" />
+
         <TableLayout
             android:id="@+id/tl_data"
             android:layout_below="@id/ib_profile_pic"
@@ -71,16 +76,14 @@
                     android:text="Email Verified : "
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/tv_email_verifiied"
+                    android:id="@+id/tv_email_verified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
 
             </TableRow>
 
-            <TableRow
-                android:layout_width="678dp"
-                tools:visibility="gone">
+            <TableRow android:layout_width="678dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -96,31 +99,23 @@
                     android:textSize="20sp" />
 
             </TableRow>
-
             <Button
-
                 android:id="@+id/btn_verify"
                 style="@style/viewCustom"
-                android:background="@color/colorAccent"
-                android:text="@string/create_act"
+                android:background="@drawable/rounded_corners"
+                android:text="Verify your Email"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                android:textStyle="bold" />
         </TableLayout>
+
 
 
         <Button
             android:id="@+id/btn_logout"
             style="@style/viewCustom"
-            android:layout_width="340dp"
-            android:layout_height="27dp"
-            android:layout_below="@+id/tl_data"
-            android:layout_alignStart="@+id/ib_profile_pic"
-            android:layout_alignEnd="@+id/ib_profile_pic"
-            android:layout_marginStart="-84dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="-85dp"
-            android:background="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="82dp"
+            android:background="@drawable/rounded_corners"
             android:text="@string/logout"
             android:textColor="@android:color/white"
             android:textStyle="bold" />

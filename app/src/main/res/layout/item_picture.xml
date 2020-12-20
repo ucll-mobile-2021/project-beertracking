@@ -1,43 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--> The configuration for the pictures. this will be placed in the main activity
+<?xml version="1.0" encoding="utf-8"?><!--> The configuration for the pictures. this will be placed in the main activity
 view as many times as there are pictures
 Gets invoked by the PictureHolder<!-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
     android:orientation="vertical">
 
-        <TextView android:id="@+id/tvImgDescription"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
 
-
-
-    <TextView android:id="@+id/tvImgDate"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/tvImgUser"
         android:layout_width="wrap_content"
-        android:layout_below="@id/tvImgDescription"
-        />
-
-    <TextView android:id="@+id/tvImgUser"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:layout_below="@id/tvImgDate"
-        />
+        android:layout_gravity="start"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
 
-    <TextView android:id="@+id/tvImgBeer"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/tvImgBeer"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvImgUser"
-        />
+        android:layout_gravity="start"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
-    <ImageView android:id="@+id/imgView"
-        android:layout_height="220dp"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvImgDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textStyle="italic" />
+
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_below="@id/tvImgBeer"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
         android:layout_gravity="center"
-        />
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tvImgDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textSize="8sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/lightGrey" />
 
 </LinearLayout>

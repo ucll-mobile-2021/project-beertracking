@@ -12,7 +12,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.beertracking.R
 import com.google.android.material.navigation.NavigationView
 
-open class BaseAppCompatActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+open class 
+BaseAppCompatActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     // This is a selfmade variant of the regular AppCompatActivity
     // (the default class that needs to be extended to create an extension)
