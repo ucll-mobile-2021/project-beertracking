@@ -24,9 +24,9 @@
         tools:layout="@layout/activity_user_info" />
     <activity
         android:id="@+id/addBeerActivity"
-        android:name="com.example.beertracking.view.AddBeerActivity"
+        android:name="com.example.beertracking.view.AddActivityActivity"
         android:label="activity_add_beer"
-        tools:layout="@layout/activity_add_beer" />
+        tools:layout="@layout/activity_add_activity" />
     <activity
         android:id="@+id/friendsActivity"
         android:name="com.example.beertracking.view.FriendsActivity"
@@ -42,4 +42,14 @@
         android:name="com.example.beertracking.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/searchActivity"
+        android:name="com.example.beertracking.view.SearchActivity"
+        android:label="activity_search"
+        tools:layout="@layout/activity_search"/>
+    <activity
+        android:id="@+id/addBeerActivity2"
+        android:name="com.example.beertracking.view.AddBeerActivity"
+        android:label="AddBeerActivity"
+        tools:layout="@layout/activity_add_beer"/>
 </navigation>
