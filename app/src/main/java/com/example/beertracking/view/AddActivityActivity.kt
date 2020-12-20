@@ -6,6 +6,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.AlarmClock.EXTRA_MESSAGE
@@ -15,6 +16,7 @@ import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.*
 import androidx.annotation.NonNull
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -32,6 +34,8 @@ import com.squareup.picasso.Picasso
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 //class to add a beer
@@ -236,23 +240,28 @@ class  AddActivityActivity : BaseAppCompatActivity() {
         var userId = mAuth!!.currentUser!!.uid
 
         //listening ONCE to the users node in the database so we get the data pulled in
-        mFireDatabase!!.child(userId!!).addListenerForSingleValueEvent(object: ValueEventListener {
+        mFireDatabase!!.child(userId!!).addListenerForSingleValueEvent(object : ValueEventListener {
 
             //called when data changes AND once on initialisation
             //notice that we never can change it later on since we added a singleValueEvent instead of
             // a regular valueEvent
+            @RequiresApi(Build.VERSION_CODES.O)
             override fun onDataChange(snapshot: DataSnapshot) {
                 //setting the fullname variable
-                fullname = snapshot.child("firstName").value.toString()  + " " + snapshot.child("lastName").value.toString()
+                fullname =
+                    snapshot.child("firstName").value.toString() + " " + snapshot.child("lastName").value.toString()
                 // Create a reference to the file whose metadata we want to change
                 var storage =
-                    FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/").getReference()
+                    FirebaseStorage.getInstance("gs://beertracker-56e99.appspot.com/")
+                        .getReference()
                 var forestRef = storage!!.child("pictures/${userId}/${filename}");
 
 
-
                 // Create file metadata to update
-                date = SimpleDateFormat("dd/MM/yyyy").format(Date())
+                var temp = LocalDateTime.now()
+                date = temp.format(DateTimeFormatter.ofPattern("yMdHms")).toString()
+                println("date")
+                println(date)
                 var mUser = mAuth!!.currentUser
                 user = fullname
                 description = et_description?.text.toString()
