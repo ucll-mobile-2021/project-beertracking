@@ -36,7 +36,9 @@ class PictureAdapter(private val items: ArrayList<ArrayList<String>>) : Recycler
                 holder!!.itemView.tvImgDescription.text = item.get(0)
                 holder!!.itemView.tvImgUser.text = item.get(1)
                 holder!!.itemView.tvImgBeer.text = item.get(2)
-                holder!!.itemView.tvImgDate.text = item.get(3)
+                 val chunked = item.get(3).chunked(2)
+                var newdate = chunked[3] + "/" + chunked[2] + "/" + chunked[0] + chunked[1]
+                holder!!.itemView.tvImgDate.text = newdate
 
                 Picasso.get().load(item.get(4).toString()).fit()
                     .into(holder.itemView.imgView)
