@@ -16,8 +16,9 @@
         <activity android:name=".view.FriendsActivity" />
         <activity android:name=".view.AboutActivity" />
         <activity android:name=".view.BaseAppCompatActivity" />
-        <activity android:name=".view.AddBeerActivity" />
+        <activity android:name=".view.AddActivityActivity" />
         <activity android:name=".view.UserInfoActivity" />
+        <activity android:name=".view.SearchActivity" />
         <activity android:name=".view.ForgotPasswordActivity" />
         <activity
             android:name=".view.LoginActivity"
@@ -33,6 +34,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".view.AddBeerActivity"
+                android:parentActivityName=".view.SearchActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.SearchActivity"/>
         </activity>
 
         <provider

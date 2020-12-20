@@ -14,8 +14,7 @@ import java.lang.Exception
 // Class to show your current friends
 class FriendsActivity : BaseAppCompatActivity() {
 
-    //globar variables
-
+    //global variables
     private var mDatabaseReference: DatabaseReference? = null
 
     private var mDatabase: FirebaseDatabase? = null
@@ -60,6 +59,7 @@ class FriendsActivity : BaseAppCompatActivity() {
         )
 
         // TO SHOW THE LIST OF CURRENT FRIENDS
+        // mDatabaseReference!!.addValueEventListener()
         mDatabaseReference!!.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (or in snapshot.children){
