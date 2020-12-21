@@ -1,4 +1,4 @@
-package com.example.beertracking.view
+ package com.example.beertracking.view
 
 import android.content.Intent
 import android.os.Build
@@ -24,7 +24,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_picture.view.*
+import java.math.BigInteger
 import java.util.concurrent.CountDownLatch
+
 
 //class to show overview of pictures from himself and friends.
 // extends baseapp for navbar
@@ -94,13 +96,13 @@ class MainActivity : BaseAppCompatActivity() {
                     // making a map of dates and urls of pictures.
                     // BUT only of pictures from friends within the friendslist
 
-                    var map = mutableMapOf<String, ArrayList<String>>()
+                    var map = mutableMapOf<BigInteger, ArrayList<String>>()
                     var picturesToBeLoaded = ArrayList<ArrayList<String>>()
 
 
                     for (xs in snapshot.child("pictures").children) {
                         for (friend in friends) {
-                            System.out.println(xs.child("userId").value.toString())
+                            println(xs.child("userId").value.toString())
                             if (friend == xs.child("userId").value.toString()) {
 
                                 var info = ArrayList<String>()
@@ -121,17 +123,19 @@ class MainActivity : BaseAppCompatActivity() {
                                 info.add(urlie)
 
 
-                                map.put(date, info)
+                                map.put(date.toBigInteger(), info)
                             }
                         }
                     }
 
                     // Sort the map so the highest date (=newest) stands in front
-                    var sortedtempmap =
-                        map.toSortedMap(Comparator.reverseOrder())
+                    var sortedtempmap = map.toSortedMap(reverseOrder())
+                    Log.d("DEBUG", map.toString())
+                    Log.d("DEBUG", sortedtempmap.toString())
 
                     // put the sorted map into an arraylist so the adapter can use it
                     for (x in sortedtempmap){
+
                         picturesToBeLoaded.add(x.value)
                     }
 
