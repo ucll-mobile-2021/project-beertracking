@@ -20,6 +20,7 @@
         <activity android:name=".view.UserInfoActivity" />
         <activity android:name=".view.SearchActivity" />
         <activity android:name=".view.ForgotPasswordActivity" />
+        <activity android:name=".view.EncyclopediaActivity" />
         <activity
             android:name=".view.LoginActivity"
             android:label="@string/title_activity_login"
@@ -40,6 +41,12 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.SearchActivity"/>
+        </activity>
+        <activity android:name=".view.BeerInfoActivity"
+            android:parentActivityName=".view.EncyclopediaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.EncyclopediaActivity"/>
         </activity>
 
         <provider

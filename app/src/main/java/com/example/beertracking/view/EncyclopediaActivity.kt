@@ -22,7 +22,7 @@ private var btnAddBeer: Button? = null
 
 private var beerlist: ArrayList<Button?>? = null
 
-class SearchActivity : BaseAppCompatActivity(){
+class EncyclopediaActivity : BaseAppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         // Set firebase instances
         mAuth = FirebaseAuth.getInstance()
@@ -57,7 +57,7 @@ class SearchActivity : BaseAppCompatActivity(){
 
                 for (or in snapshot.children){
                     if (or.child("name").value.toString().startsWith(input, true))
-                    mapBeer += mapOf(or.key.toString() to or.child("name").value.toString())
+                        mapBeer += mapOf(or.key.toString() to or.child("name").value.toString())
                     println(mapBeer)
                 }
 
@@ -66,12 +66,12 @@ class SearchActivity : BaseAppCompatActivity(){
                 val linearlayout = findViewById<LinearLayout>(R.id.beer_linearlayout)
 
                 for ((k, v) in mapBeer){
-                    val newButton = Button(this@SearchActivity)
+                    val newButton = Button(this@EncyclopediaActivity)
                     newButton.text = v
                     newButton.setOnClickListener {
-                        Toast.makeText(this@SearchActivity, v, Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@SearchActivity, AddActivityActivity::class.java).apply {
-                            putExtra(EXTRA_MESSAGE, v)
+                        Toast.makeText(this@EncyclopediaActivity, v, Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@EncyclopediaActivity, BeerInfoActivity::class.java).apply {
+                            putExtra(EXTRA_MESSAGE, k)
                         }
                         startActivity(intent)
                     }

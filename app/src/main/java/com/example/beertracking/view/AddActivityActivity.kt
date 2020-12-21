@@ -225,7 +225,6 @@ class  AddActivityActivity : BaseAppCompatActivity() {
     // function to store the new image in the realtime database as well
     private fun writeNewImageToDatabase() {
         //creating the new Picture class with the correct info (which has been set in other functions)
-        println(intent.getStringExtra(EXTRA_MESSAGE))
         val info = Picture(date!!, description!!, user!!, intent.getStringExtra(EXTRA_MESSAGE)!!, url!!, userId!!)
         val key = dataReference!!.push().key
         // pushing the image to the database

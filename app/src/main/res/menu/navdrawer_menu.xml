@@ -31,7 +31,11 @@
         android:icon="@drawable/baseline_sports_bar_white_18dp"/>
 
     <item
+        android:id="@+id/encyclopediaActivity"
+        android:title="Encyclopedia"
+        android:icon="@drawable/baseline_sports_bar_white_18dp"/>
 
+    <item
         android:id="@+id/userInfoActivity"
         android:title="@string/profile"
         android:icon="@drawable/baseline_account_circle_white_18dp" />

@@ -52,4 +52,10 @@
         android:name="com.example.beertracking.view.AddBeerActivity"
         android:label="AddBeerActivity"
         tools:layout="@layout/activity_add_beer"/>
+
+    <activity
+        android:id="@+id/beerInfoActivity"
+        android:name="com.example.beertracking.view.BeerInfoActivity"
+        android:label="EncyclopediaActivity"
+        tools:layout="@layout/activity_beerinfo"/>
 </navigation>

@@ -78,6 +78,9 @@ BaseAppCompatActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             R.id.addBeerActivity -> {
                 return launch<SearchActivity>()
             }
+            R.id.encyclopediaActivity -> {
+                return launch<EncyclopediaActivity>()
+            }
 
             R.id.userInfoActivity -> {
                 return launch<UserInfoActivity>()
