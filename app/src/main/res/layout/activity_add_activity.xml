@@ -87,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:visibility="invisible"
-            android:background="@color/colorAccent"
+            android:background="@drawable/rounded_corners"
             android:textColor="@android:color/white"
             android:textStyle="bold"/>
 
