@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/rounded_corners"
             android:text="Camera"
             android:textColor="@android:color/white"
             android:textStyle="bold"
@@ -50,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cameraBtn"
             app:layout_constraintStart_toEndOf="@+id/cameraBtn"
             app:layout_constraintTop_toTopOf="@+id/cameraBtn"
-            android:background="@color/colorAccent"
+            android:background="@drawable/rounded_corners"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 

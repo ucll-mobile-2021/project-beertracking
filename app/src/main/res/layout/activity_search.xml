@@ -10,51 +10,48 @@
 
     <!--> here you can add your specific page code. </-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <TextView
             android:id="@+id/nav_titel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
+            android:textSize="25dp"
             android:text="Search beer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/name_text"
+            android:layout_gravity="center" />
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Beer name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nav_titel" />
-
+            android:layout_gravity="center">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_text"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Beer name"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/searchbeer_button"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
             android:text="Search Beer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name_text" />
-
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/rounded_corners"
+           />
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="250dp"
             android:layout_height="400dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchbeer_button">
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:id="@+id/beer_linearlayout"
@@ -63,19 +60,23 @@
                 android:layout_marginBottom="32dp"
                 android:orientation="vertical" />
         </ScrollView>
-
+        <TextView
+            android:layout_marginTop="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beer not in the list?"
+            android:layout_gravity="center"/>
         <Button
             android:id="@+id/addbeer_button"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Beer not in list"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.543"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            android:text="Add Beer"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_corners"
+            android:layout_marginTop="2dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <!--> Just like the first part of the code the next part NEEDS to stay here, untouched.
     IF YOU CHANGE THIS OR DONT HAVE IT AT THE END OF THE FILE THE NAV WILL NOT WORK</-->
@@ -100,6 +101,10 @@
         app:menu="@menu/navdrawer_menu"
         app:headerLayout="@layout/nav_header"
         />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
