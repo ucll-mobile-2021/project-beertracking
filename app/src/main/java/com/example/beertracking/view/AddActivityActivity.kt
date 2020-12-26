@@ -143,7 +143,23 @@ class  AddActivityActivity : BaseAppCompatActivity() {
             cameraBtn!!.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View) {
                     askCameraPermissions()
-                    uploadBtn!!.visibility = View.VISIBLE
+                }
+            })
+            this!!.selectedImage!!.addOnLayoutChangeListener( object: View.OnLayoutChangeListener{
+                override fun onLayoutChange(
+                    v: View?,
+                    left: Int,
+                    top: Int,
+                    right: Int,
+                    bottom: Int,
+                    oldLeft: Int,
+                    oldTop: Int,
+                    oldRight: Int,
+                    oldBottom: Int
+                ) {
+                    if(null!=selectedImage!!.getDrawable()) {
+                        uploadBtn!!.visibility = View.VISIBLE
+                    }
                 }
             })
             galleryBtn!!.setOnClickListener(object : View.OnClickListener {
@@ -151,7 +167,6 @@ class  AddActivityActivity : BaseAppCompatActivity() {
                     val gallery =
                         Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     startActivityForResult(gallery, GALLERY_REQUEST_CODE)
-                    uploadBtn!!.visibility = View.VISIBLE
                 }
             })
 
