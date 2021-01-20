@@ -55,14 +55,18 @@ class AddBeerActivity : BaseAppCompatActivity() {
         val origin = findViewById<View>(R.id.origin_text) as EditText
         val style = findViewById<View>(R.id.style_text) as EditText
 
-        val info = Beer(name.text.toString(), description.text.toString() , alcohol.text.toString().toDouble(), origin.text.toString(), style.text.toString())
-        val key = dataReference!!.push().key
+        if (name.text.isNullOrBlank() || description.text.isNullOrBlank() || alcohol.text.isNullOrBlank() || origin.text.isNullOrBlank() || style.text.isNullOrBlank()) {
+            Toast.makeText(this, "Your input is invalid please try again", Toast.LENGTH_SHORT).show()
+        } else {
+            val info = Beer(name.text.toString(), description.text.toString() , alcohol.text.toString().toDouble(), origin.text.toString(), style.text.toString())
+            val key = dataReference!!.push().key
 
-        dataReference!!.child(key!!).setValue(info)
+            dataReference!!.child(key!!).setValue(info)
 
-        Toast.makeText(this, "Successfully added the beer!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Successfully added the beer!", Toast.LENGTH_SHORT).show()
 
-        val intent = Intent(this, SearchActivity::class.java).apply {}
-        startActivity(intent)
+            val intent = Intent(this, SearchActivity::class.java).apply {}
+            startActivity(intent)
+        }
     }
 }
