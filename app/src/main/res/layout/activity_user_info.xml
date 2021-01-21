@@ -110,15 +110,15 @@
 
 
 
-        <Button
-            android:id="@+id/btn_logout"
-            style="@style/viewCustom"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="82dp"
-            android:background="@drawable/rounded_corners"
-            android:text="@string/logout"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+<!--        <Button-->
+<!--            android:id="@+id/btn_logout"-->
+<!--            style="@style/viewCustom"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginTop="82dp"-->
+<!--            android:background="@drawable/rounded_corners"-->
+<!--            android:text="@string/logout"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textStyle="bold" />-->
 
 
     </RelativeLayout>

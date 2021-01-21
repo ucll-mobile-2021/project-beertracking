@@ -57,8 +57,8 @@ class UserInfoActivity : BaseAppCompatActivity() {
         tvEmail = findViewById<View>(R.id.tv_email) as TextView
 
         //set the buttons and their listeners
-        btnLogOut = findViewById<View>(R.id.btn_logout) as Button
-        btnLogOut!!.setOnClickListener { logOut() }
+//        btnLogOut = findViewById<View>(R.id.btn_logout) as Button
+//        btnLogOut!!.setOnClickListener { logOut() }
 
         verifyButton = findViewById<View>(R.id.btn_verify) as Button
         verifyButton!!.setOnClickListener { verifyEmail() }
@@ -94,6 +94,7 @@ class UserInfoActivity : BaseAppCompatActivity() {
 
     //logout send you back to the loginactivity
     private fun logOut() {
+        println("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
         FirebaseAuth.getInstance().signOut();
         val intent = Intent(this@UserInfoActivity, LoginActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
